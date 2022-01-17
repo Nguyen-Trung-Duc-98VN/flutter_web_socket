@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_socket/page/socket/socket.controller.dart';
 import 'package:get/get.dart';
-import 'socket_page_controller.dart';
 
 class SocketPage extends StatelessWidget {
   final SocketController _socketController = Get.put(SocketController());
