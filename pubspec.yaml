@@ -16,6 +16,13 @@ dependencies:
   web_socket_channel: ^2.1.0
   get:
   json_annotation: ^4.4.0
+  flutter_webrtc: ^0.7.0+hotfix.1
+  shared_preferences: ^2.0.7
+  http: ^0.13.4
+  path_provider: ^2.0.2
+  uuid: ^3.0.5
+  permission_handler: ^8.3.0
+  stream_channel: ^2.1.0
 
 dev_dependencies:
   flutter_test:

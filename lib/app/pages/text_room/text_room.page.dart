@@ -2,16 +2,16 @@
  * @Author: NguyenTrungDuc 
  * @Date: 2022-01-12 14:30:46 
  * @Last Modified by: NguyenTrungDuc
- * @Last Modified time: 2022-01-12 15:29:30
+ * @Last Modified time: 2022-01-18 16:37:50
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_web_socket/page/web_socket/web_socket.controller.dart';
+import 'package:flutter_web_socket/app/pages/text_room/index.dart';
 import 'package:get/get.dart';
 
-class WebSocketPage extends StatelessWidget {
-  WebSocketPage({Key? key}) : super(key: key);
+class TextRoomPage extends StatelessWidget {
+  TextRoomPage({Key? key}) : super(key: key);
 
-  final controller = Get.put(WebSocketController());
+  final controller = Get.put(TextRoomController());
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,17 @@ class WebSocketPage extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 50.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            OutlinedButton(
+              onPressed: () {
+                Get.back();
+              },
+              child: const Text(
+                'Back',
+                style: TextStyle(color: Colors.red),
+              ),
+            ),
             const SizedBox(height: 20.0),
             OutlinedButton(
               onPressed: () {
@@ -27,7 +37,6 @@ class WebSocketPage extends StatelessWidget {
               },
               child: const Text('Send'),
             ),
-            const SizedBox(height: 30.0),
             // StreamBuilder(
             //   stream: controller.socket.stream,
             //   builder: (context, snapshot) {
@@ -38,10 +47,16 @@ class WebSocketPage extends StatelessWidget {
             //   },
             // )
             OutlinedButton(
-              onPressed: () {
-                controller.joinToConfigChannel();
-              },
+              onPressed: controller.joinToConfigChannel,
               child: const Text('Send Login'),
+            ),
+            OutlinedButton(
+              onPressed: controller.call,
+              child: const Text('Create room call'),
+            ),
+            OutlinedButton(
+              onPressed: controller.sendDataByWsk,
+              child: const Text('Send message'),
             ),
           ],
         ),

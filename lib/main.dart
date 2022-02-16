@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_socket/page/socket/socket.page.dart';
-import 'package:flutter_web_socket/page/web_socket/web_socket.page.dart';
+import 'package:flutter_web_socket/app/core/index.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,10 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "web socket channel getx",
-      home: WebSocketPage(),
+      getPages: Pages.items,
+      initialRoute: Routes.home,
     );
   }
 }
